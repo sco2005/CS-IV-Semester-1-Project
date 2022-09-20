@@ -10,7 +10,7 @@ namespace ExampleMod.Content.Items.Weapons
 	public class ExampleShotgun : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This is a modded shotgun.");
+			Tooltip.SetDefault("Test shotgun (devgun).");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -22,15 +22,15 @@ namespace ExampleMod.Content.Items.Weapons
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
-			Item.useTime = 55; // The item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 55; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+			Item.useTime = 2; // The item's use time in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 2; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item36; // The sound that this item plays when used.
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 10; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 9999; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 6f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 

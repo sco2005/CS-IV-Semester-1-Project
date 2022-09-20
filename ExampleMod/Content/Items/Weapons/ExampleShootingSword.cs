@@ -15,7 +15,7 @@ namespace ExampleMod.Content.Items.Weapons
 	public class ExampleShootingSword : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This is a modded sword that shoots Star Wrath-like projectiles.");
+			Tooltip.SetDefault("This is a modded sword that shoots Star Wrath-like projectiles. (devsword)");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -25,14 +25,14 @@ namespace ExampleMod.Content.Items.Weapons
 			Item.height = 42;
 
 			Item.useStyle = ItemUseStyleID.Swing;
-			Item.useTime = 20;
-			Item.useAnimation = 20;
+			Item.useTime = 5;
+			Item.useAnimation = 5;
 			Item.autoReuse = true;
 
 			Item.DamageType = DamageClass.Melee;
-			Item.damage = 50;
+			Item.damage = 500;
 			Item.knockBack = 6;
-			Item.crit = 6;
+			Item.crit = 50;
 
 			Item.value = Item.buyPrice(gold: 5);
 			Item.rare = ItemRarityID.Pink;
