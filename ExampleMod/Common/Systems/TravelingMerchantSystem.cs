@@ -12,13 +12,15 @@ public class TravelingMerchantSystem : ModSystem
 	}
 
 	public override void SaveWorldData(TagCompound tag) {
-		if (ExampleTravelingMerchant.spawnTime != double.MaxValue) {
+		if (ExampleTravelingMerchant.spawnTime != double.MaxValue)
 			tag["ExampleTravelingMerchantSpawnTime"] = ExampleTravelingMerchant.spawnTime;
-		}
 	}
 
 	public override void LoadWorldData(TagCompound tag) {
-		if (!tag.TryGet("ExampleTravelingMerchantSpawnTime", out ExampleTravelingMerchant.spawnTime)) {
+		if (tag.TryGet("ExampleTravelingMerchantSpawnTime", out int spawnTime)) {
+			ExampleTravelingMerchant.spawnTime = spawnTime;
+		}
+		else {
 			ExampleTravelingMerchant.spawnTime = double.MaxValue;
 		}
 	}

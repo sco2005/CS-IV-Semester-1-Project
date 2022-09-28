@@ -7,18 +7,18 @@ namespace ExampleMod.Content.Items.Weapons
 	public class ExampleMagicWeapon : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This is an example magic weapon (devmagic)");
+			Tooltip.SetDefault("This is an example magic weapon");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults() {
-			Item.damage = 500;
+			Item.damage = 25;
 			Item.DamageType = DamageClass.Magic; // Makes the damage register as magic. If your item does not have any damage type, it becomes true damage (which means that damage scalars will not affect it). Be sure to have a damage type.
 			Item.width = 34;
 			Item.height = 40;
-			Item.useTime = 10;
-			Item.useAnimation = 10;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Shoot; // Makes the player use a 'Shoot' use style for the Item.
 			Item.noMelee = true; // Makes the item not do damage with it's melee hitbox.
 			Item.knockBack = 6;
