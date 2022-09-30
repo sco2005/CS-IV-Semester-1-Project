@@ -25,9 +25,9 @@ namespace ExampleMod.Content.Items.Weapons
 			Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.
 
 			Item.DamageType = DamageClass.Melee; // Whether your item is part of the melee class.
-			Item.damage = 500; // The damage your item deals.
+			Item.damage = 200; // The damage your item deals.
 			Item.knockBack = 2; // The force of knockback of the weapon. Maximum is 20
-			Item.crit = 50; // The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
+			Item.crit = 32; // The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
 
 			Item.value = Item.buyPrice(gold: 1); // The value of the weapon in copper coins.
 			Item.rare = ModContent.RarityType<ExampleModRarity>(); // Give this item our custom rarity.
