@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace ExampleMod.Content.Items.Weapons
 {
-	public class ExampleSpear : ModItem
+	public class Holy_Lance : ModItem
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("This is a modded spear");
