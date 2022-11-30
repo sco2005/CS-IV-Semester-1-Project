@@ -28,7 +28,7 @@ namespace ExampleMod.Content.Items.Armor
 			Item.height = 18; // Height of the item
 			Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth
 			Item.rare = ItemRarityID.Green; // The rarity of the item
-			Item.defense = 5; // The amount of defense the item will give when equipped
+			Item.defense = 36; // The amount of defense the item will give when equipped
 		}
 
 		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
