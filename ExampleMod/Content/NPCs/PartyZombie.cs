@@ -11,10 +11,10 @@ using ExampleMod.Content.Buffs;
 namespace ExampleMod.Content.NPCs
 {
 	// Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
-	public class Astronaut : ModNPC
+	public class PartyZombie : ModNPC
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Astronaut");
+			DisplayName.SetDefault("Party Zombie");
 
 			Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
 
@@ -27,20 +27,20 @@ namespace ExampleMod.Content.NPCs
 		public override void SetDefaults() {
 			NPC.width = 18;
 			NPC.height = 40;
-			NPC.damage = 32;
-			NPC.defense = 20;
-			NPC.lifeMax = 800;
+			NPC.damage = 14;
+			NPC.defense = 6;
+			NPC.lifeMax = 200;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath2;
 			NPC.value = 60f;
-			NPC.knockBackResist = 1f;
+			NPC.knockBackResist = 0.5f;
 			NPC.aiStyle = 3; // Fighter AI, important to choose the aiStyle that matches the NPCID that we want to mimic
 
 			AIType = NPCID.Zombie; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
 			AnimationType = NPCID.Zombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
 			Banner = Item.NPCtoBanner(NPCID.Zombie); // Makes this NPC get affected by the normal zombie banner.
 			BannerItem = Item.BannerToItem(Banner); // Makes kills of this NPC go towards dropping the banner it's associated with.
-			SpawnModBiomes = new int[1] { ModContent.GetInstance<ExampleSurfaceBiome>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary (change to space at some point)
+			SpawnModBiomes = new int[1] { ModContent.GetInstance<ExampleSurfaceBiome>().Type }; // Associates this NPC with the ExampleSurfaceBiome in Bestiary
 		}
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot) {
@@ -75,7 +75,7 @@ namespace ExampleMod.Content.NPCs
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
 				// Sets the description of this NPC that is listed in the bestiary.
-				new FlavorTextBestiaryInfoElement("Lost astronaut from another planet"),
+				new FlavorTextBestiaryInfoElement("This type of zombie for some reason really likes to spread confetti around. Otherwise, it behaves just like a normal zombie."),
 
 				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
 				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
